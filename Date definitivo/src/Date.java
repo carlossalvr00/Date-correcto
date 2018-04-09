@@ -104,7 +104,7 @@ public class Date {
 	            if (_day<1 || _day>30) correctday=false;
 	        }
 	        if (_month==2) {
-	        if (_day>28) correctday=false;
+	        if (_day>28 && _day<1) correctday=false;
 	        }
 	        return correctday;
 	        }
@@ -118,5 +118,80 @@ public class Date {
 	        System.out.println(seasoname);
 	        }
 	    
+	    public void PrintMonthsLeft() {	                                                                                                                                    
+	        switch (_month) {
+	        case 1: System.out.println("February March April May June July August September October November December");
+	        break;
+	        case 2: System.out.println("March April May June July August September October November December");
+	        break;
+	        case 3: System.out.println("April May June July August September October November December");
+	        break;
+	        case 4: System.out.println("May June July August September October November December");
+	        break;
+	        case 5: System.out.println("June July August September October November December");
+	        break;
+	        case 6: System.out.println("July August September October November December");
+	        break;
+	        case 7: System.out.println("August September October November December");
+	        break;
+	        case 8: System.out.println("September October November December");
+	        break;
+	        case 9: System.out.println("October November December");
+	        break;
+	        case 10: System.out.println("November December");
+	        break;
+	        case 11: System.out.println("December");
+	        break;
+	        case 12: System.out.println("No Months left");
+	        break;
+	        default: System.out.println("Mes erroneo");
+	        break;
+	        }
+	        }
+	    
+	    public void PrintDate() {
+	    	System.out.println(_day+"/"+_month+"/"+_year);
+	        }
+	    
+	    public void PrintDaysLeft() {
+	        int aux,i;
+	        int last=0;
+	        aux=_day;
+	        if (_month==1 || _month==3 || _month==5 || _month==7 || _month==8 || _month==10 || _month==12) last=31;
+	        if (_month==2) last=28;
+	        if (_month== 4|| _month== 6|| _month==9 || _month==11) last=30;
+	        for (i=_day;i<=last;i++) {
+	            PrintDate();
+	            _day++;
+	        }
+	        _day=aux;
+	    }
+	    
+	    public void PrintSameDaysMonths() {
+	    	if (_month==1 || _month==3 || _month==5 || _month==7 || _month==8 || _month==10 || _month==12) 	        System.out.println("January March May July August October November December");
+	        if (_month== 4|| _month== 6|| _month==9 || _month==11) System.out.println("April June September November");
+	        if (_month==2) System.out.println("February");
+	    }
+	    
+	    public void daysPast() {
+	        int i,total,j,daysmonth;
+	        total=0;
+	        daysmonth=_day;
+	        i=_month;
+	        while (i>=1) {
+	            for (j=daysmonth;j>1;j--) {
+	                total++;
+	            }
+	            i--;
+	            if (i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12) daysmonth=31;
+	            if (i==2) daysmonth=28;
+	            if (i== 4|| i== 6|| i==9 || i==11) daysmonth=30;
+	        }
+	        System.out.println(total);
+	        }
+	    
+	    
+	    
+	   
 	    
 }
