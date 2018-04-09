@@ -190,6 +190,72 @@ public class Date {
 	        System.out.println(total);
 	        }
 	    
+	    public void RandomAttemptswhile() {
+	    	boolean condition;
+	        int attempt=0;
+	        double randommonth,randomday;
+	        condition=false;
+	        attempt=0;
+	        while (condition==false) {
+	        randommonth=Math.random()*12+1;
+	        randomday=Math.random()*31+1;
+	        attempt++;
+	        if (randomday==_day && randommonth==_month) condition=true;
+	        }
+	        System.out.println(attempt);
+	        }
+	    
+	    public void RandomAttemptsdowhile() {
+	    	boolean condition;
+	        int attempt=0;
+	        double randommonth,randomday;
+	        condition=false;
+	        attempt=0;
+	        do {
+	        randommonth=Math.random()*12+1;
+	        randomday=Math.random()*31+1;
+	        attempt++;
+	        if (randomday==_day && randommonth==_month) condition=true;
+	        }while (condition==false);
+	        System.out.println(attempt);
+	        }
+	    
+	    public void dayOfWeek(int weekday) {
+	        int i,j;
+	        i=1;
+	        while (i<_month) {
+	            if (i==1 || i==3 || i==5 || i==7 || i==8 || i==10 || i==12) _day=31;
+	            if (i== 4|| i== 6|| i==9 || i==11) _day=30;
+	            if (i==2) _day=28;
+	            for (j=1;j<=_day;j++) {
+	                weekday++;
+	                if (weekday>7) weekday=1;
+	            }
+	            i++;
+	        }
+	        for (i=1;i<_day;i++) {
+	                weekday++;
+	                if (weekday>7) weekday=1;
+	        }
+	    switch (weekday) {
+	    case 1: System.out.println("Monday");
+	    break;
+	    case 2: System.out.println("Tuesday");
+	    break;
+	    case 3: System.out.println("Wednesday");
+	    break;
+	    case 4: System.out.println("Thursday");;
+	    break;
+	    case 5: System.out.println("Friday");;
+	    break;
+	    case 6: System.out.println("Saturday");
+	    break;
+	    case 7: System.out.println("Sunday");;
+	    break;
+	    }
+	    }
+	  
+	    
 	    
 	    
 	   
