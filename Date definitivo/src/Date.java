@@ -62,5 +62,61 @@ public class Date {
 	        return _day==date.getDay();
 	        }
 	    
+	    public void PrintMonthName() {
+	        String monthname="";
+	        switch (_month) {
+	        case 1: monthname="January";
+	        break;
+	        case 2: monthname="February";
+	        break;
+	        case 3: monthname="March";
+	        break;
+	        case 4: monthname="April";
+	        break;
+	        case 5: monthname="May";
+	        break;
+	        case 6: monthname="June";
+	        break;
+	        case 7: monthname="July";
+	        break;
+	        case 8: monthname="August";
+	        break;
+	        case 9: monthname="September";
+	        break;
+	        case 10: monthname="October";
+	        break;
+	        case 11: monthname="November";
+	        break;
+	        case 12: monthname="December";
+	        break;
+	        default: System.out.println("Month out of bounds");
+	        break;
+	        }
+	        System.out.println(monthname);
+	        }
+	    
+	    public boolean CorrectMonth() {
+	        boolean correctday=true;
+	        if (_month==1 || _month==3 || _month==5 || _month==7 || _month==8 || _month==10 || _month==12) {
+	            if (_day<1 || _day>31) correctday=false;
+	        }
+	        if (_month== 4|| _month== 6|| _month==9 || _month==11) {
+	            if (_day<1 || _day>30) correctday=false;
+	        }
+	        if (_month==2) {
+	        if (_day>28) correctday=false;
+	        }
+	        return correctday;
+	        }
+	    
+	    public void PrintSeason() {
+	        String seasoname="";
+	        if (_month==1 || _month==2 || _month==12) seasoname="Winter";
+	        if (_month==3 || _month==4 || _month==5) seasoname="Spring";
+	        if (_month==6 || _month==7|| _month==8) seasoname="Summer";
+	        if (_month==9 || _month==10|| _month==11) seasoname="Autumn";
+	        System.out.println(seasoname);
+	        }
+	    
 	    
 }
